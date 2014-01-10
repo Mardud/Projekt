@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+
 <title>Dzień</title>
  
 <script type="text/javascript" src="jQuery.js"></script>
@@ -12,8 +14,10 @@ var counter = 1
 $(document).ready(function(){
      $("#getButtonValue").click(function () {
             var msg= ''
-            msg += "<p>" + counter +"."+ $('#textboxpon').val() + "</p>"
-    	  $( msg ).appendTo("#zadania");
+            var dzionek = '#'
+            dzionek += $( "#single" ).val()
+            msg += "<p>" + counter +"."+ $('#dodajZadanie').val() + "</p>"
+    	  $( msg ).appendTo(dzionek);
           counter += 1
      });
   });
@@ -23,34 +27,13 @@ $(document).ready(function(){
   $(document).ready(function(){
     function displayVals() {
       var singleValues = $( "#single" ).val() || [];
-      $( "#dzien" ).html(singleValues);
+      $( "#dzien" ).text(singleValues);
   }
  
   $( "select" ).change( displayVals );
   displayVals();
   });
 </script>
-
- 
-</head>
- 
-<body>
- 
-<h1>Dzień</h1>
- 
-
-
-<p id="cos"></p>
- 
-<select id="single">
-  <option>Poniedziałek</option>
-  <option>Wtorek</option>
-  <option>Środa</option>
-  <option>Czwrtek</option>
-  <option>Piątek</option>
-  <option>Sobota</option>
-  <option>Niedziela</option>
-</select>
 
 <script id="Zmiana Dnia"> 
 $(document).ready(function(){
@@ -59,26 +42,40 @@ $(document).ready(function(){
      });
   });
 </script>
+ 
+</head>
+ 
+<body>
+ 
+<h1>Dzień</h1>
+ 
+<select id="single">
+  <option>Poniedziałek</option>
+  <option>Wtorek</option>
+  <option>Środa</option>
+  <option>Czwartek</option>
+  <option>Piątek</option>
+  <option>Sobota</option>
+  <option>Niedziela</option>
+</select>
 
-<div id='TextBoxesGroup'>
-	<div id="TextBoxDiv1">
-		<label id="dzien">Poniedziałek </label>
-                <p><input type='textbox' id='textboxpon' ></p>
-	</div>
-</div>
+
+<p><input type='textbox' id='dodajZadanie' ></p>
+
+
 
 
 <input type='button' value='Dodaj zadanie' id='getButtonValue'>
 <table>
 
 <tr>
-<td>Poniedziałek<div id="zadaniaPo" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Wtorek<div id="zadaniaWt" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Środa<div id="zadaniaSr" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Czwartek<div id="zadaniaCz" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Piątek<div id="zadaniaPi" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Sobota<div id="zadaniaSo" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Niedziela<div id="zadaniaNi" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Poniedziałek<div id="Poniedziałek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Wtorek<div id="Wtorek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Środa<div id="Środa" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Czwartek<div id="Czwartek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Piątek<div id="Piątek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Sobota<div id="Sobota" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Niedziela<div id="Niedziela" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
 </tr>
 
 </table>
