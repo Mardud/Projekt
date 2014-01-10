@@ -10,6 +10,18 @@
 .table{
   margin-left: 1%;
 }
+
+td#dni{
+  float:left;
+  border:1px solid;
+  border-radius:25px;
+  padding: 18px 36px;
+  width:220px;
+  height: 540px;
+  margin-left: 12%;
+  margin-top: 3%;
+  background-color:#66cc00
+}
 </style>
  
 <script type="text/javascript" src="jQuery.js"></script>
@@ -21,9 +33,8 @@ $(document).ready(function(){
             var msg= ''
             var dzionek = '#'
             dzionek += $( "#single" ).val()
-            msg += "<p>" + "- "+ $('#dodajZadanie').val() + "</p>"
+            msg += "<p>" +'<input type="checkbox" >'+ $('#dodajZadanie').val() + "</p>"
     	  $( msg ).appendTo(dzionek);
-          counter += 1
      });
   });
 </script>
@@ -52,9 +63,9 @@ $(document).ready(function(){
  
 <body>
  
-<h1>Dzień</h1>
+<h1 style="margin-left: 12%;">Dzień</h1>
  
-<select id="single">
+<select id="single" style="margin-left: 12%;">
   <option>Poniedziałek</option>
   <option>Wtorek</option>
   <option>Środa</option>
@@ -64,23 +75,25 @@ $(document).ready(function(){
   <option>Niedziela</option>
 </select>
 
-
-<p><input type='textbox' id='dodajZadanie' ></p>
-
+<input type="checkbox" >
 
 
+<p><input type='textbox' id='dodajZadanie' style="margin-left: 12%;" ></p>
 
-<input type='button' value='Dodaj zadanie' id='getButtonValue'>
+
+
+
+<input type='button' value='Dodaj zadanie' id='getButtonValue' style="margin-left: 12%;">
 <table class="table">
 
 <tr>
-<td>Poniedziałek<div id="Poniedziałek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Wtorek<div id="Wtorek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Środa<div id="Środa" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Czwartek<div id="Czwartek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Piątek<div id="Piątek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Sobota<div id="Sobota" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
-<td>Niedziela<div id="Niedziela" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Poniedziałek<div id="Poniedziałek" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Wtorek<div id="Wtorek" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Środa<div id="Środa" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Czwartek<div id="Czwartek" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Piątek<div id="Piątek" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Sobota<div id="Sobota" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
+<td>Niedziela<div id="Niedziela" style="overflow: scroll; width: 175px; height: 350px; border:1px solid; border-radius:5px;"></div></td>
 </tr>
 
 </table>
