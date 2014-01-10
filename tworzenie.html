@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl-PL">
+<head>
+<title>Strona z newsem</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<style type="text/css">
+
+.textfield{
+  border-radius:5px;
+}
+
+.submintbutton{
+  border-radius:15px;
+}
+
+.data{
+  font-size: 20px;
+  font-family: FreeSans;
+}
+
+div#tab{
+  float:left;
+  border:1px solid;
+  border-radius:25px;
+  padding: 18px 36px;
+  width:220px;
+  height: 420px;
+  margin-left: 12%;
+  margin-top: 6%;
+  background-color:#66cc00
+}
+
+div#paint{
+  width:450px;
+  height: 920px;
+  background:transparent url(goalkp.jpg) 0 0 no-repeat;
+  margin-left: 42%;
+}
+
+
+</style>
+
+<!-- dodanie jQuery do dokumentu -->
+
+<script type="text/javascript" src="jQuery.js"></script>
+
+<script id="Dodawanie konta"> 
+$(document).ready(function(){
+     $("#submitbutton").click(function () {
+            var msg = ''
+            var name = $('#name').val()
+            var surname = $('#surname').val()
+            var email = $('#email').val()
+            var password = $('#password').val()
+            var confpassword = $('#confpassword').val()
+            $.ajax({
+              type: "POST",
+              url: "http://0.0.0.0:3000/users",
+              beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+              data: { name: name , surname: surname, email: email,
+password: password }
+            })
+            .done(function( msg ) {
+              alert( "Data Saved: " + msg );
+            });
+     });
+  });
+</script>
+
+</head>
+<body>
+ <div>
+  <div id="tab">
+  <p class="data">Name
+  <input type="text" class="textfield" id="name"></p>
+  <p class="data">Surname
+  <input type="text" class="textfield" id="surname"></p>
+  <p class="data">Email
+  <input type="text" class="textfield" id="email"></p>
+  <p class="data">Password
+  <input type="text" class="textfield" id="password"></p>
+  <p class="data">Confirm Password
+  <input type="text" class="textfield" id="confpassword"></p>
+  <button class="submintbutton" id="submitbutton">Submit</button>
+  </div>
+  <div id="paint"></div>
+  </div>
+
+<div id="zadania">
+<p> Tu jest cos </p>
+</div>
+</body>
+</html>

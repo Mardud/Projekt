@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Dzień</title>
+ 
+<script type="text/javascript" src="jQuery.js"></script>
+
+<script id="Dodawanie zadan"> 
+var counter = 1
+
+$(document).ready(function(){
+     $("#getButtonValue").click(function () {
+            var msg= ''
+            msg += "<p>" + counter +"."+ $('#textboxpon').val() + "</p>"
+    	  $( msg ).appendTo("#zadania");
+          counter += 1
+     });
+  });
+</script>
+
+<script id="dni">
+  $(document).ready(function(){
+    function displayVals() {
+      var singleValues = $( "#single" ).val() || [];
+      $( "#dzien" ).html(singleValues);
+  }
+ 
+  $( "select" ).change( displayVals );
+  displayVals();
+  });
+</script>
+
+ 
+</head>
+ 
+<body>
+ 
+<h1>Dzień</h1>
+ 
+
+
+<p id="cos"></p>
+ 
+<select id="single">
+  <option>Poniedziałek</option>
+  <option>Wtorek</option>
+  <option>Środa</option>
+  <option>Czwrtek</option>
+  <option>Piątek</option>
+  <option>Sobota</option>
+  <option>Niedziela</option>
+</select>
+
+<script id="Zmiana Dnia"> 
+$(document).ready(function(){
+     $("#Mon").click(function () {
+    	  $( "Mon" ).appendTo("#dzien");
+     });
+  });
+</script>
+
+<div id='TextBoxesGroup'>
+	<div id="TextBoxDiv1">
+		<label id="dzien">Poniedziałek </label>
+                <p><input type='textbox' id='textboxpon' ></p>
+	</div>
+</div>
+
+
+<input type='button' value='Dodaj zadanie' id='getButtonValue'>
+<table>
+
+<tr>
+<td>Poniedziałek<div id="zadaniaPo" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Wtorek<div id="zadaniaWt" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Środa<div id="zadaniaSr" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Czwartek<div id="zadaniaCz" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Piątek<div id="zadaniaPi" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Sobota<div id="zadaniaSo" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+<td>Niedziela<div id="zadaniaNi" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
+</tr>
+
+</table>
+
+
+
+</body>
+</html>
