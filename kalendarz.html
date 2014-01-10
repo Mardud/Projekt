@@ -5,18 +5,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 
 <title>Dzień</title>
+
+<style>
+.table{
+  margin-left: 1%;
+}
+</style>
  
 <script type="text/javascript" src="jQuery.js"></script>
 
-<script id="Dodawanie zadan"> 
-var counter = 1
+<script id="Dodawanie zadan">
 
 $(document).ready(function(){
      $("#getButtonValue").click(function () {
             var msg= ''
             var dzionek = '#'
             dzionek += $( "#single" ).val()
-            msg += "<p>" + counter +"."+ $('#dodajZadanie').val() + "</p>"
+            msg += "<p>" + "- "+ $('#dodajZadanie').val() + "</p>"
     	  $( msg ).appendTo(dzionek);
           counter += 1
      });
@@ -66,7 +71,7 @@ $(document).ready(function(){
 
 
 <input type='button' value='Dodaj zadanie' id='getButtonValue'>
-<table>
+<table class="table">
 
 <tr>
 <td>Poniedziałek<div id="Poniedziałek" style="overflow: scroll; width: 175px; height: 350px;"></div></td>
