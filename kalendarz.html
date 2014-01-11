@@ -39,6 +39,18 @@ $(document).ready(function(){
   });
 </script>
 
+<script id="Dodawanie celow">
+
+$(document).ready(function(){
+     $("#Cel").click(function () {
+            var msg= ''
+            var dzionek = '#'
+            msg += "<option>" + $('#dodajCel').val() + "</option>"
+    	  $( msg ).appendTo('#cele');
+     });
+  });
+</script>
+
 <script id="dni">
   $(document).ready(function(){
     function displayVals() {
@@ -51,18 +63,15 @@ $(document).ready(function(){
   });
 </script>
 
-<script id="Zmiana Dnia"> 
-$(document).ready(function(){
-     $("#Mon").click(function () {
-    	  $( "Mon" ).appendTo("#dzien");
-     });
-  });
-</script>
+
+
  
 </head>
  
 <body>
- 
+<table>
+<tr>
+<td>
 <h1 style="margin-left: 12%;">Dzień</h1>
  
 <select id="single" style="margin-left: 12%;">
@@ -80,8 +89,17 @@ $(document).ready(function(){
 
 
 
-
 <input type='button' value='Dodaj zadanie' id='getButtonValue' style="margin-left: 12%;">
+</td>
+
+<td>
+<h1 style="margin-left: 34%;"> Cele </h1>
+<select id="cele" style="margin-left: 12%;"></select>
+<p><input type='textbox' id='dodajCel' style="margin-left: 12%;" ></p>
+<input type='button' value='Dodaj Cel' id='Cel' style="margin-left: 34%;">
+</td>
+</tr>
+</table>
 <table class="table">
 
 <tr>
