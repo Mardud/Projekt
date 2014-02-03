@@ -1,0 +1,38 @@
+<h1>Day</h1>
+<p>
+  <strong>Day:</strong>
+  <%= @day.name %>
+</p>
+
+
+<h2>Tasks</h2>
+<% @day.tasks.each do |task| %>
+    <p>
+      <strong>Task:</strong>
+      <%= task.name %>
+      <%= task.done %>
+    <td><%= link_to 'Edit', edit_user_week_day_task_path(task.day.week.user, task.day.week, task.day, task) %></td>
+    <td><%= link_to 'Delete', [task.day, task], method: :delete %></td>
+
+
+    </p>
+
+<% end %>
+
+<h2>Add a task:</h2>
+<%= form_for([@day, @day.tasks.build]) do |f| %>
+
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label "Done" %> <br />
+      <%= f.check_box :done %> <br />
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

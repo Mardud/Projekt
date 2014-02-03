@@ -1,0 +1,25 @@
+<h1>Editing Week</h1>
+
+<%= form_for :week, url: user_week_path(@week.user, @week), method: :patch do |f| %>
+    <% if @week.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@week.errors.count, "error") %> prohibited
+            this post from being saved:</h2>
+          <ul>
+            <% @week.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p>
+      <%= f.label :date %><br>
+      <%= f.text_field :date %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', user_weeks_path %>

@@ -1,0 +1,28 @@
+<p>
+  <strong>Date:</strong>
+  <%= @week.date %>
+</p>
+
+
+<h2>Days</h2>
+<% @week.days.each do |day| %>
+    <p>
+      <strong>Day:</strong>
+      <%= day.name %>
+      <td><%= link_to 'Show', [day.week, day] %></td>
+      <td><%= link_to 'Delete', [day.week, day], method: :delete %></td>
+
+    </p>
+
+<% end %>
+
+<h2>Add a day:</h2>
+<%= form_for([@week, @week.days.build]) do |f| %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

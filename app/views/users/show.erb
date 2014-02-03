@@ -1,0 +1,62 @@
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @user.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<h2>Weeks <%= link_to 'Show', user_weeks_path(@user) %></td></h2><td>
+<% @user.weeks.each do |week| %>
+    <p>
+      <strong>Date:</strong>
+      <%= week.date %>
+
+    </p>
+
+
+<% end %>
+
+<h2>Goal <%= link_to 'Show', user_goals_path(@user) %></td></h2>
+<% @user.goals.each do |goal| %>
+    <p>
+      <strong>Goal:</strong>
+      <%= goal.name %>
+    </p>
+
+<% end %>
+<%= link_to 'Back', users_path %>
+
+<h2>Add a week:</h2>
+<%= form_for([@user, @user.weeks.build]) do |f| %>
+    <p>
+      <%= f.label :date %><br />
+      <%= f.text_field :date %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<h2>Add goal:</h2>
+<%= form_for([@user, @user.goals.build]) do |f| %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

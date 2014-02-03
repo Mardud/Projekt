@@ -1,0 +1,13 @@
+<h1>Goals</h1>
+<table>
+<% @goals.each do |goal| %>
+    <tr>
+      <td><%= goal.name %></td>
+      <td><%= link_to 'Show', [goal.user, goal] %></td>
+      <td><%= link_to 'Delete', [goal.user, goal], method: :delete %></td>
+      <td><%= link_to 'Edit',  edit_user_goal_path(goal.user, goal) %></td>
+    </tr>
+
+<% end %>
+  <%= link_to 'Back', user_path(@user) %>
+</table>

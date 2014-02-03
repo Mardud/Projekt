@@ -1,0 +1,10 @@
+<h2>Add a week:</h2>
+<%= form_for([@user, @user.weeks.build]) do |f| %>
+    <p>
+      <%= f.label :date %><br />
+      <%= f.text_field :date %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

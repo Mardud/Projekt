@@ -1,0 +1,11 @@
+<h1>Weeks</h1>
+
+<% @weeks.each do |week| %>
+    <tr>
+      <td><%= week.date %></td>
+      <td><%= link_to 'Show', [week.user, week] %></td>
+      <td><%= link_to 'Delete', [week.user, week], method: :delete %></td>
+      <td><%= link_to 'Edit',  edit_user_week_path(week.user, week) %></td>
+    </tr>
+
+<% end %>
